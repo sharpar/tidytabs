@@ -15,6 +15,7 @@ Individual experience, strengths, skills, schedules
   - Claudia Chen: experience in ux/ui design, visual design and software development process, some expereince in web programming and scrum process, fulltime student available on campus during weekdays and online during evenings. computer science major and genome biology major
   - Ujash Joshi: Experienced in Java, Python, Web Development, Databases and deployment. Comp Sci specialist. Available throughout the week.
   - Shau Memon: Experienced in Java, C, Python, Databases (SQL). Live in the suburbs but available M-F afternoons and after this class MWF. Skilled in running team meetings and keeping team focused and on track. 
+  - Shivain Thapar: Experience in web development (front and back end), databases, and UI/UX design. Computer science specialist.  Live downtown so available throughout the week. 
   
 
 3. Describe your brainstorming meetings
