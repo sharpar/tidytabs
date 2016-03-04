@@ -15,11 +15,11 @@
 
 3. Describe your brainstorming meetings
   - When, where (online, phone, physical location) of meetings
-    We have a slack group, which we are using for communication. In addition we have had 3 short meetings.
+  We have a slack group, which we are using for communication. In addition we have had 3 short meetings.
   - Who was there?
-    We have had 5 different members at every meeting. Everyone has contributed to the online discussions.
+  We have had 5 different members at every meeting. Everyone has contributed to the online discussions.
   - Rough meeting minutes/notes.
-    In the first meeting we discussed potential add-ons based on team member preferences. We looked at the feasibility of the proposed add-ons in the second meeting and decided on our project in the last meeting.
+  In the first meeting we discussed potential add-ons based on team member preferences. We looked at the feasibility of the proposed add-ons in the second meeting and decided on our project in the last meeting.
 
 4. Consider the logistics of  your future meetings:
   - Meet at BA since most of us would be around here
@@ -27,9 +27,10 @@
 
 5. Plan your collaboration ahead
   - Which roles will individuals take on?
-    We will be using the Scrum process. We will assign the Product Leader, scrum master, developers, QAs (test cases) and intergration in the next meeting based on member strengths and preferences..
+  We will be using the Scrum process. We will assign the Product Leader, scrum master, developers, QAs (test cases) and intergration in the next meeting based on member strengths and preferences..
   - How will you make decisions?
-    Based on member’s preference? respect people’s decision due the their past experience
+  Based on member’s preference? respect people’s decision due the their past experience
+
 6. github/git How will you collaborate?
   - Using github for collabration: https://github.com/csc302-2016-spring/Group12
   - Developers work on their own branch for some specific features
