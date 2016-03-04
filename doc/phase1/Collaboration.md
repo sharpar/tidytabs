@@ -1,6 +1,6 @@
 1. Goal: Provide insight into your collaborative work as a team
 
-  Our team goals are oriented to utilize the strengths of our members to successfully collaborate on this project. We have decided to focus on how we can involve all 6 members of our group to build our add-on. Thus, we’ve decided on a set of key aspects to help direct our team:
+  Out team's goal is to creating a Firefox addon that will not just help us reach our target mark in this course, but that will prove to be useful for the general Firefox community of usrs and one that we can list on the FF Addon site with our names on it with pride. To reach our goal, we are commited to utilize the strengths of our members to successfully collaborate on this project. We have decided to focus on how we can involve all 6 members of our group to build our add-on. Thus, we’ve decided on a set of key aspects to help direct our team:
   - Communication
   - Commitment
   - Relevant experience
