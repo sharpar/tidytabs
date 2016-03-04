@@ -9,7 +9,7 @@
 
 2. The team’s competencies and constraints
 
-Our team has a mixture of skills and experiences in the computer science field. Some members have stronger coding skills and more familiar with software development process, while other members are more experienced in user experience and interaction design. Our team has people with strengths in system configuration, computer interaction, web programming, database designing, and mobile application. Some of our constraints include time - full time vs part time student, and different course workloads. Other constraints include differences in ability as not everyone has same coding skills, styles, and abilities. However these differences are also a strength of the team as we will be able to focus on working with our individual strengths for the project.
+  Our team has a mixture of skills and experiences in the computer science field. Some members have stronger coding skills and more familiar with software development process, while other members are more experienced in user experience and interaction design. Our team has people with strengths in system configuration, computer interaction, web programming, database designing, and mobile application. Some of our constraints include time - full time vs part time student, and different course workloads. Other constraints include differences in ability as not everyone has same coding skills, styles, and abilities. However these differences are also a strength of the team as we will be able to focus on working with our individual strengths for the project.
   
 Individual experience, strengths, skills, schedules
   - Claudia Chen: experience in ux/ui design, visual design and software development process, some expereince in web programming and scrum process, fulltime student available on campus during weekdays and online during evenings. computer science major and genome biology major
@@ -17,14 +17,9 @@ Individual experience, strengths, skills, schedules
   - Shaun Memon: Experienced in Java, C, Python, Databases (SQL). Live in the suburbs but available M-F afternoons and after this class MWF. Skilled in running team meetings and keeping team focused and on track. 
   - Shivain Thapar: Experience in web development (front and back end), databases, and UI/UX design. Computer science specialist.  Live downtown so available throughout the week. 
   
+3. Brainstorming meetings (when, where, who)
 
-3. Describe your brainstorming meetings
-  - When, where (online, phone, physical location) of meetings
-  We have a slack group, which we are using for communication. In addition we have had 3 short meetings.
-  - Who was there?
-  We have had 5 different members at every meeting. Everyone has contributed to the online discussions.
-  - Rough meeting minutes/notes.
-  In the first meeting we discussed potential add-ons based on team member preferences. We looked at the feasibility of the proposed add-ons in the second meeting and decided on our project in the last meeting.
+  We have a slack group, which we are using as our main online form of communication; everyone has contributed to the online discussion. In addition we have had 3 in person meetings (approximately 1 meeting every 1-2 weeks), each with 5 different members in attendance. Our first meeting was a our first major brainstorming session. We discussed potential add-ons based on team member preferences as well as writing down any possible ideas that came to us. These were all recorded and shared on slack. We looked at the feasibility of the proposed add-ons in the second meeting - this included discussion of similar existing add-ons and the possible complexity of implimenting each idea. Finally, we decided on our project in the last meeting. 
 
 4. Consider the logistics of  your future meetings:
   - Meet at BA since most of us would be around here
