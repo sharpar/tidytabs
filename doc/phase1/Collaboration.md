@@ -25,8 +25,11 @@ Individual experience, strengths, skills, schedules
   - Who was there?
   We have had 5 different members at every meeting. Everyone has contributed to the online discussions.
   - Rough meeting minutes/notes.
+  
   -- Our first meeting was Feb. 5 in tutorial. This was the first time many of us had met and after introductions we brainstormed potential add-ons. In the brainstorming phase, all ideas are accepted and written down. In order to facilitate online group communication, we created a Slack group we could use to collaborate. We put all our ideas on to the group and made it homework to come up with more ideas and look into the feasibility of the ideas we had.  
+
   -- Our second meeting was during tutorial. We met our TA and went over our list of ideas with him. We looked at the feasibility of the proposed add-ons that we had come up with and made it homework for everyone to look into how we could implement their top choice for addon.
+
   -- In our third meeting, we met after the midterm exam and employed a process of elimination method to weed out ideas until we settled on what is now our proposed project. 
 
 
