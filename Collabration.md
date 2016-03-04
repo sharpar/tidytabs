@@ -27,7 +27,7 @@
 
 5. Plan your collaboration ahead
   - Which roles will individuals take on?
-    We will be using the Scrum process. We will assign the Product Leader, scrum master, developers, QAs (test cases), some people will do the implementation and deployment in the next meeting based on member strengths and preferences..
+    We will be using the Scrum process. We will assign the Product Leader, scrum master, developers, QAs (test cases) and intergration in the next meeting based on member strengths and preferences..
   - How will you make decisions?
     Based on member’s preference? respect people’s decision due the their past experience
 6. github/git How will you collaborate?
