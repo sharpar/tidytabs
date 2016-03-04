@@ -15,11 +15,11 @@
   - Claudia Chen: experience in ux/ui design, visual design and software development process, some expereince in web programming and scrum process, fulltime student available on campus during weekdays and online during evenings. computer science major and genome biology major
   - Ujash Joshi: Experienced in Java, Python, Web Development, Databases and deployment. Comp Sci specialist. Available throughout the week.
   - Shaun Memon: Experienced in Java, C, Python, Databases (SQL). Live in the suburbs but available M-F afternoons and after this class MWF. Skilled in running team meetings and keeping team focused and on track. 
-  - Shivain Thapar: Experience in web development (front and back end), databases, and UI/UX design. Computer science specialist.  Live downtown so available throughout the week. 
+  - Shivain Thapar: Experience in web development (front and back end), databases, and UI/UX design. Computer science specialist. Live downtown so available throughout the week. 
   
 3. Brainstorming meetings (when, where, who)
 
-  We have a slack group, which we are using as our main online form of communication; everyone has contributed to the online discussion. In addition we have had 3 in person meetings (approximately 1 meeting every 1-2 weeks), each with 5 different members in attendance. Our first meeting was a our first major brainstorming session. We discussed potential add-ons based on team member preferences as well as writing down any possible ideas that came to us. These were all recorded and shared on slack. We looked at the feasibility of the proposed add-ons in the second meeting - this included discussion of similar existing add-ons and the possible complexity of implimenting each idea. Finally, we decided on our project in the last meeting. 
+  We have a slack group, which we are using as our main form of communication; everyone has contributed to the online discussion. In addition we have had 3 in person meetings (approximately 1 meeting every 1-2 weeks), each with 5 different members in attendance. Our first meeting was a our first major brainstorming session. We discussed potential add-ons based on team member preferences as well as writing down any possible ideas that came to us. These were all recorded and shared on slack. We looked at the feasibility of the proposed add-ons in the second meeting - this included discussion of similar existing add-ons and the possible complexity of implimenting each idea. Finally, we decided on our project in the last meeting. 
 
 4. Consider the logistics of  your future meetings:
   - Meet at BA since most of us would be around here
