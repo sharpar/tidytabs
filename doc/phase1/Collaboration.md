@@ -1,6 +1,6 @@
 1. Goal: Provide insight into your collaborative work as a team
 
-  Out team's goal is to creating a Firefox addon that will not just help us reach our target mark in this course, but that will prove to be useful for the general Firefox community of usrs and one that we can list on the FF Addon site with our names on it with pride. To reach our goal, we are commited to utilize the strengths of our members to successfully collaborate on this project. We have decided to focus on how we can involve all 6 members of our group to build our add-on. Thus, we’ve decided on a set of key aspects to help direct our team:
+  Our team's goal is to create a Firefox addon that will prove to be useful for the general Firefox community of users and one that we can list on the FireFox Addon site with our names on it with pride. To reach our goal, we are commited to utilize the strengths of our members to successfully collaborate on this project. We have decided to focus on how we can involve all 6 members of our group to build our add-on. Thus, we’ve decided on a set of key aspects to help direct our team:
   - Communication
   - Commitment
   - Relevant experience
@@ -9,7 +9,7 @@
 
 2. The team’s competencies and constraints
 
-  Our team has a mixture of skills and experiences in the computer science field. Some members have stronger coding skills and more familiar with software development process, while other members are more experienced in user experience and interaction design. Our team has people with strengths in system configuration, computer interaction, web programming, database designing, and mobile application. Some of our constraints include time - full time vs part time student, and different course workloads. Other constraints include differences in ability as not everyone has same coding skills, styles, and abilities. However these differences are also a strength of the team as we will be able to focus on working with our individual strengths for the project.
+  Our team has a mixture of skills and experiences in the computer science field. Some members have stronger coding skills and are more familiar with the software development process, while other members are more experienced with user experience and interaction design. Our team has people with strengths in system configuration, computer interaction, web programming, database design, and mobile application development. Some of our constraints include time - full time vs part time student, and different course workloads. Other constraints include differences in ability as not everyone has same coding skills, styles, and abilities. However these differences are also a strength of the team as we will be able to focus on working with our individual strengths for the project.
   
   Individual experience, strengths, skills, schedules
   - Claudia Chen: experience in ux/ui design, visual design and software development process, some expereince in web programming and scrum process, fulltime student available on campus during weekdays and online during evenings. computer science major and genome biology major
