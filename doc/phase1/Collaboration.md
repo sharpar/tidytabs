@@ -17,7 +17,7 @@ Individual experience, strengths, skills, schedules
   - Shaun Memon: Experienced in Java, C, Python, Databases (SQL). Live in the suburbs but available M-F afternoons and after this class MWF. Skilled in running team meetings and keeping team focused and on track. 
   - Shivain Thapar: Experience in web development (front and back end), databases, and UI/UX design. Computer science specialist. Live downtown so available throughout the week. 
   - Bill Feng: Experienced in Java, Python, C++, and some web design. Familiar with software development proccesses. Computer science specialist. Available throughout the week.
-  - Jack Shih: Experienced in database SQL, Java, C, C++, python, and javascript. PEY experience as a web developer, and currently working as a product support engineer in SAP using ABAP programming language.
+  - Jack Shih: Experienced in database SQL, Java, C, C++, python, and javascript. PEY experience as a web developer, and currently working as a product support engineer in SAP using ABAP programming language. Part time Computer Science Specialist student available on campus and online during weekdays after 7pm, and all days during the weekends. 
 
 3. Describe your brainstorming meetings
   - When, where (online, phone, physical location) of meetings
