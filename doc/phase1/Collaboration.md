@@ -7,11 +7,14 @@
   - Skill set (eg. technical skill)
   - Work distribution
 
-2. Make sure to describe the team’s competencies and constraints.
-  - People have various experiences in computer science field. People who are in computer science specialist may have stronger coding skills, more familiar with software development process.
-  - Our team has people with strengths in system configuration, computer interaction, web programming, database designing, and mobile application.
-  - Time constraint, full time or part time student, different course workload
-  - Ability constraint, not everyone has same coding skills, styles, and abilities.
+2. The team’s competencies and constraints
+
+Our team has a mixture of skills and experiences in the computer science field. Some members have stronger coding skills and more familiar with software development process, while other members are more experienced in user experience and interaction design. Our team has people with strengths in system configuration, computer interaction, web programming, database designing, and mobile application. Some of our constraints include time - full time vs part time student, and different course workloads. Other constraints include differences in ability as not everyone has same coding skills, styles, and abilities. However these differences are also a strength of the team as we will be able to focus on working with our individual strengths for the project.
+  
+Individual experience, strengths, skills, schedules
+  - Claudia Chen: experience in ux/ui design, visual design and software development process, some expereince in web programming and scrum process, fulltime student available on campus during weekdays and online during evenings. computer science major and genome biology major
+  - 
+  
 
 3. Describe your brainstorming meetings
   - When, where (online, phone, physical location) of meetings
