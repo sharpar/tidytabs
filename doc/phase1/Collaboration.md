@@ -31,8 +31,7 @@ Individual experience, strengths, skills, schedules
 
 
 4. Consider the logistics of  your future meetings:
-  - Meet at BA since most of us would be around here.
-  - Meet on weekdays so we are not creating troubles for people who are commuting.
+  For our future meetings, we will likely meet at Bahen because most of us will be around this location. We will meet on weekdays to accomidate team members who commute.
 
 5. Plan your collaboration ahead
   - Which roles will individuals take on?
