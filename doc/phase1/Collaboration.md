@@ -11,7 +11,7 @@
 
   Our team has a mixture of skills and experiences in the computer science field. Some members have stronger coding skills and more familiar with software development process, while other members are more experienced in user experience and interaction design. Our team has people with strengths in system configuration, computer interaction, web programming, database designing, and mobile application. Some of our constraints include time - full time vs part time student, and different course workloads. Other constraints include differences in ability as not everyone has same coding skills, styles, and abilities. However these differences are also a strength of the team as we will be able to focus on working with our individual strengths for the project.
   
-Individual experience, strengths, skills, schedules
+  Individual experience, strengths, skills, schedules
   - Claudia Chen: experience in ux/ui design, visual design and software development process, some expereince in web programming and scrum process, fulltime student available on campus during weekdays and online during evenings. computer science major and genome biology major
   - Ujash Joshi: Experienced in Java, Python, Web Development, Databases and deployment. Comp Sci specialist. Available throughout the week.
   - Shaun Memon: Experienced in Java, C, Python, Databases (SQL). Live in the suburbs but available M-F afternoons and after this class MWF. Skilled in running team meetings and keeping team focused and on track. 
