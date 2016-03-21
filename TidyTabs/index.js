@@ -51,25 +51,16 @@ function checkLink(link){
   	return false;
 }
 
-require("sdk/tabs").on("open", addListener);
-function addListener(newTab){
-	newTab.addEventListener('mousedown', function(e) {
-    if (e.button = 0 && e.target.nodeName == 'a') {
-        e.preventDefault();
-        e.stopPropagation();
-
-        console.log(e.target.nodeValue);
-        if(checkLink(e.target.nodeValue)){
-
-        }
-        newTab.addEventListener('mouseup', function(e) {
-            newTab.removeEventListener('mouseup', arguments.callee, false);
-            e.preventDefault();
-            e.stopPropagation();
-        }. false);
+/* Feature 1
+ * Closes other new tabs when opening another new tab.
+ */
+var tabs = require("sdk/tabs");
+tabs.on('open', function onOpen(newTab) {
+  for (let tab of tabs){
+      if((tab != newTab) && ((tab.url == "about:newtab") || (tab.url == "about:blank"))){
+        tab.close();
+      }
     }
 });
-}
-
 
 exports.dummy = dummy;
