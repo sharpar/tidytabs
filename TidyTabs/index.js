@@ -52,15 +52,20 @@ function checkLink(link){
 }
 
 /* Feature 1
- * Closes other new tabs when opening another new tab.
+ * Closes other blank pages when opening a new tab.
+ * If already focused on a blank page, a new tab will not be opened.
  */
 var tabs = require("sdk/tabs");
 tabs.on('open', function onOpen(newTab) {
-  for (let tab of tabs){
-      if((tab != newTab) && ((tab.url == "about:newtab") || (tab.url == "about:blank"))){
+  if((tabs.activeTab.url == "about:blank") || (tabs.activeTab.url == "about:newtab")){
+    newTab.close();
+  }else{
+    for (let tab of tabs){
+      if((tab != newTab) && ((tab.url == "about:blank") || (tab.url == "about:newtab"))){
         tab.close();
       }
     }
+  }
 });
 
 exports.dummy = dummy;
