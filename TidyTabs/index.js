@@ -6,9 +6,8 @@ var tabs = require("sdk/tabs");
 
 //Register Event Triggers
 tabs.on("open", checkEmpty);
+tabs.on("activate", checkOtherEmpty);
 tabs.on("ready", checkDuplicate);
-
-
 
 /* Feature 1
  * Closes other blank pages when opening a new tab.
@@ -17,7 +16,14 @@ tabs.on("ready", checkDuplicate);
 function checkEmpty(newTab) {
   if((tabs.activeTab.url == "about:blank") || (tabs.activeTab.url == "about:newtab")){
     newTab.close();
-  }else{
+  }
+}
+
+/* If not focused on a blank page, wait till the focus switches.
+ * Then check if other blank pages exist, and close them.
+ */
+function checkOtherEmpty(newTab){
+  if((newTab.url == "about:blank") || (newTab.url == "about:newtab")){
     for (let tab of tabs){
       if((tab != newTab) && ((tab.url == "about:blank") || (tab.url == "about:newtab"))){
         tab.close();
@@ -27,15 +33,20 @@ function checkEmpty(newTab) {
 }
 
 /* Check if the address of the new tab is the same as that of an existing tab.
- * If yes, switch to the old tab and close the new tab.
+ * If yes, call the duplicate handler.
  */
 function checkDuplicate(newTab) {
-    for (let tab of tabs){
-      if((tab != newTab) && (tab.url == newTab.url)){
-        tab.activate();
-        newTab.close();
-      }
+  for (let tab of tabs){
+    if((tab != newTab) && (tab.url == newTab.url)){
+      duplicateHandler(tab);
     }
+  }
+}
+
+/* The duplicate handler deals with the duplicate tab.
+ */
+function duplicateHandler(tab){
+  tab.close();
 }
 
 /* Check if there exists a tab with the given link.
@@ -90,5 +101,3 @@ notifications.notify({
   }
 });
 */
-
-exports.dummy = dummy;
