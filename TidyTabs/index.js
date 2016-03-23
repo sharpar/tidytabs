@@ -1,16 +1,14 @@
+//Global Vars
 var self = require("sdk/self");
 var buttons = require('sdk/ui/button/action');
-
-
-// a dummy function, to show how tests work.
-// to see how to test this function, look at test/test-index.js
-function dummy(text, callback) {
-  callback(text);
-}
-
 var tabs = require("sdk/tabs");
+
+
+//Register Event Triggers
 tabs.on("open", checkEmpty);
 tabs.on("ready", checkDuplicate);
+
+
 
 /* Feature 1
  * Closes other blank pages when opening a new tab.
@@ -32,7 +30,6 @@ function checkEmpty(newTab) {
  * If yes, switch to the old tab and close the new tab.
  */
 function checkDuplicate(newTab) {
-  var tabs = require("sdk/tabs");
     for (let tab of tabs){
       if((tab != newTab) && (tab.url == newTab.url)){
         tab.activate();
@@ -45,7 +42,6 @@ function checkDuplicate(newTab) {
  * If yes, switch to that tab.
  */
 function checkLink(link){
-  var tabs = require("sdk/tabs");
     for (let tab of tabs){
       if(tab.url == link){
         tab.activate();
