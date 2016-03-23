@@ -1,16 +1,14 @@
+//Global Vars
 var self = require("sdk/self");
 var buttons = require('sdk/ui/button/action');
-
-
-// a dummy function, to show how tests work.
-// to see how to test this function, look at test/test-index.js
-function dummy(text, callback) {
-  callback(text);
-}
-
 var tabs = require("sdk/tabs");
+
+
+//Register Event Triggers
 tabs.on("open", checkEmpty);
 tabs.on("ready", checkDuplicate);
+
+
 
 /* Feature 1
  * Closes other blank pages when opening a new tab.
@@ -28,8 +26,8 @@ function checkEmpty(newTab) {
   }
 }
 
+
 function checkDuplicate(newTab) {
-  var tabs = require("sdk/tabs");
     for (let tab of tabs){
       if((tab != newTab) && (tab.url == newTab.url)){
         console.log("old tab: " + tab.url);
@@ -40,8 +38,8 @@ function checkDuplicate(newTab) {
     }
 }
 
+
 function checkLink(link){
-  var tabs = require("sdk/tabs");
     for (let tab of tabs){
       if((tab != newTab) && (tab.url == link)){
         console.log("old tab: " + tab.url);
@@ -53,6 +51,7 @@ function checkLink(link){
     return false;
 }
 
+
 //Example From https://developer.mozilla.org/en-US/Add-ons/SDK/Tutorials/List_Open_Tabs
 require("sdk/ui/button/action").ActionButton({
 	  id: "list-tabs",
@@ -62,7 +61,6 @@ require("sdk/ui/button/action").ActionButton({
 	});
 
 function listTabs() {
-  var tabs = require("sdk/tabs");
   for (let tab of tabs)
     console.log(tab.url);
 }
