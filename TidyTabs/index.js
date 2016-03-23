@@ -28,24 +28,26 @@ function checkEmpty(newTab) {
   }
 }
 
+/* Check if the address of the new tab is the same as that of an existing tab.
+ * If yes, switch to the old tab and close the new tab.
+ */
 function checkDuplicate(newTab) {
   var tabs = require("sdk/tabs");
     for (let tab of tabs){
       if((tab != newTab) && (tab.url == newTab.url)){
-        console.log("old tab: " + tab.url);
-        console.log("new tab: " + newTab.url);
         tab.activate();
         newTab.close();
       }
     }
 }
 
+/* Check if there exists a tab with the given link.
+ * If yes, switch to that tab.
+ */
 function checkLink(link){
   var tabs = require("sdk/tabs");
     for (let tab of tabs){
-      if((tab != newTab) && (tab.url == link)){
-        console.log("old tab: " + tab.url);
-        console.log("new tab: " + link);
+      if(tab.url == link){
         tab.activate();
         return true;
       }
@@ -53,16 +55,19 @@ function checkLink(link){
     return false;
 }
 
-//Example From https://developer.mozilla.org/en-US/Add-ons/SDK/Tutorials/List_Open_Tabs
+// adding an actino button to the tool bar
 require("sdk/ui/button/action").ActionButton({
-	  id: "list-tabs",
-	  label: "List Tabs",
-	  icon: "./data/icon-16.png",
-	  onClick: listTabs
-	});
+  id: "list-tabs",
+  label: "List Tabs",
+  icon: {
+    "16": "./icon-16.png",
+    "32": "./icon-32.png",
+    "64": "./icon-64.png"
+  },
+  onClick: listTabs
+});
 
 function listTabs() {
-  var tabs = require("sdk/tabs");
   for (let tab of tabs)
     console.log(tab.url);
 }
