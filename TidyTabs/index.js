@@ -87,6 +87,7 @@ var doit = Services.prompt.confirm(null, 'title', 'message');
 if (doit) { 
 //he clicked yes
 }
+*/
 
 // This is for a notification on your computer
 /*
