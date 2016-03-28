@@ -14,34 +14,34 @@ tabs.on("ready", checkDuplicate);
  * If already focused on a blank page, a new tab will not be opened.
  */
 function checkEmpty(newTab) {
-  if((tabs.activeTab.url == "about:blank") || (tabs.activeTab.url == "about:newtab")){
-    newTab.close();
-  }
+    if ((tabs.activeTab.url == "about:blank") || (tabs.activeTab.url == "about:newtab")) {
+        newTab.close();
+    }
 }
 
 /* If not focused on a blank page, wait till the focus switches.
  * Then check if other blank pages exist, and close them.
  */
-function checkOtherEmpty(newTab){
-  if((newTab.url == "about:blank") || (newTab.url == "about:newtab")){
-    for (let tab of tabs){
-      if((tab != newTab) && ((tab.url == "about:blank") || (tab.url == "about:newtab"))){
-        tab.close();
-      }
+function checkOtherEmpty(newTab) {
+    if ((newTab.url == "about:blank") || (newTab.url == "about:newtab")) {
+        for (let tab of tabs) {
+            if ((tab != newTab) && ((tab.url == "about:blank") || (tab.url == "about:newtab"))) {
+                tab.close();
+            }
+        }
     }
-  }
 }
 
 /* Check if the address of the new tab is the same as that of an existing tab.
  * If yes, call the duplicate handler.
  */
 function checkDuplicate(newTab) {
-  for (let tab of tabs){
-    if((tab != newTab) && (tab.url == newTab.url)){
-      //duplicateHandler(tab);
-      tab.close()
+    for (let tab of tabs) {
+        if ((tab != newTab) && (tab.url == newTab.url)) {
+            //duplicateHandler(tab);
+            tab.close()
+        }
     }
-  }
 }
 
 /* The duplicate handler deals with the duplicate tab.
@@ -53,31 +53,31 @@ function duplicateHandler(tab){
 /* Check if there exists a tab with the given link.
  * If yes, switch to that tab.
  */
-function checkLink(link){
-    for (let tab of tabs){
-      if(tab.url == link){
-        tab.activate();
-        return true;
-      }
+function checkLink(link) {
+    for (let tab of tabs) {
+        if (tab.url == link) {
+            tab.activate();
+            return true;
+        }
     }
     return false;
 }
 
 // adding an actino button to the tool bar
 require("sdk/ui/button/action").ActionButton({
-  id: "list-tabs",
-  label: "List Tabs",
-  icon: {
-    "16": "./icon-16.png",
-    "32": "./icon-32.png",
-    "64": "./icon-64.png"
-  },
-  onClick: listTabs
+    id: "list-tabs",
+    label: "Tidy Tabs",
+    icon: {
+        "16": "./icon-16.png",
+        "32": "./icon-32.png",
+        "64": "./icon-64.png"
+    },
+    onClick: listTabs
 });
 
 function listTabs() {
-  for (let tab of tabs)
-    console.log(tab.url);
+    for (let tab of tabs)
+        console.log(tab.url);
 }
 
 // This is for the pop up menu in the browser
@@ -85,7 +85,7 @@ function listTabs() {
 var {Cu, Ci} = require('chrome');
 Cu.import('resource://gre/modules/Services.jsm');
 var doit = Services.prompt.confirm(null, 'title', 'message');
-if (doit) { 
+if (doit) {
 //he clicked yes
 }
 */
