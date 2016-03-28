@@ -38,17 +38,18 @@ function checkOtherEmpty(newTab){
 function checkDuplicate(newTab) {
   for (let tab of tabs){
     if((tab != newTab) && (tab.url == newTab.url)){
-      duplicateHandler(tab);
+      //duplicateHandler(tab);
+      tab.close()
     }
   }
 }
 
 /* The duplicate handler deals with the duplicate tab.
- */
+
 function duplicateHandler(tab){
   tab.close();
 }
-
+ */
 /* Check if there exists a tab with the given link.
  * If yes, switch to that tab.
  */
