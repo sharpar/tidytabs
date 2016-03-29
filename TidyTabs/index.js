@@ -3,9 +3,10 @@ var self = require("sdk/self");
 var buttons = require('sdk/ui/button/action');
 var tabs = require("sdk/tabs");
 var notifications = require("sdk/notifications");
-var icon16 = "./icon-16.png";
-var icon32 = "./icon-32.png";
-var icon64 = "./icon-64.png";
+var urls = require("sdk/url");
+var icons = {"16": "./icon-16.png",
+            "32": "./icon-32.png",
+            "64": "./icon-64.png"};
 
 
 //Register Event Triggers
@@ -48,13 +49,19 @@ function duplicateHandler(tab){
  * If yes, call the duplicate handler.
  */
 function checkDuplicate(newTab) {
+    //only if current tab then display notification
+    if (newTab != tabs.activeTab) 
+    {
+        return;
+    }
+
     for (let tab of tabs) {
         if ((tab != newTab) && (tab.url == newTab.url)) {
             notifications.notify({
                 title: "Tidy Tabs",
                 text: "Duplicate tab opened, Do you want to close it?",
                 data: "Notification of duplicate tab displayed",
-                iconURL: icon16,
+                iconURL: icons["16"],
                 onClick: function (data) {
                     console.log(data);
                     console.log("Noticiation clicked on");
@@ -65,10 +72,6 @@ function checkDuplicate(newTab) {
 
         }
     }
-}
-
-function duplicateHandler(tab){
-  tab.close();
 }
 
 /* When a new tab is ready and it has the same TLD as another tab, move it next
@@ -91,7 +94,6 @@ function groupTLD(newTab){
     }
 }
 
-var urls = require("sdk/url");
 function parseTLD(url){
     var tld = urls.getTLD(url);
     var list = url.split(tld);
@@ -117,11 +119,7 @@ function checkLink(link) {
 require("sdk/ui/button/action").ActionButton({
     id: "list-tabs",
     label: "Tidy Tabs",
-    icon: {
-        "16": icon16,
-        "32": icon32,
-        "64": icon64
-    },
+    icon: icons,
     onClick: listTabs
 });
 
