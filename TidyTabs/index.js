@@ -4,9 +4,13 @@ var buttons = require('sdk/ui/button/action');
 var tabs = require("sdk/tabs");
 var notifications = require("sdk/notifications");
 var urls = require("sdk/url");
-var icons = {"16": "./icon-16.png",
+var regIcons = {"16": "./icon-16.png",
             "32": "./icon-32.png",
             "64": "./icon-64.png"};
+var unregIcons = {"16": "./icon-16-grey.png",
+            "32": "./icon-32-grey.png",
+            "64": "./icon-64-grey.png"};
+
 
 
 var registered = false;
@@ -14,16 +18,21 @@ var registered = false;
 //Register Event Triggers
 function register(){
 	registered = true;
+    regButton.icon = regIcons;
 	tabs.on("open", checkEmpty);
 	tabs.on("activate", checkOtherEmpty);
 	tabs.on("activate", checkDuplicate);
 	tabs.on("ready", checkDuplicate);
 	tabs.on("ready", groupTLD);
 	console.log("Registered TidyTabs");
+    checkOtherEmpty(tabs.activeTab);
+    checkDuplicate(tabs.activeTab);
+
 }
 
 function unregister(){
 	registered = false;
+    regButton.icon = unregIcons;
 	tabs.removeListener("open", checkEmpty);
 	tabs.removeListener("activate", checkOtherEmpty);
 	tabs.removeListener("activate", checkDuplicate);
@@ -33,10 +42,10 @@ function unregister(){
 }
 
 function toggleRegister(){
-	if (registered != true){
-		register();
-	} else {
+	if (registered){
 		unregister();
+	} else {
+		register();
 	}
 }
 /* Feature 1
@@ -57,6 +66,7 @@ function checkOtherEmpty(newTab) {
         for (let tab of tabs) {
             if ((tab != newTab) && ((tab.url == "about:blank") || (tab.url == "about:newtab"))) {
                 tab.close();
+                break;
             }
         }
     }
@@ -85,7 +95,7 @@ function checkDuplicate(newTab) {
                 title: "Tidy Tabs",
                 text: "Duplicate tab opened, Do you want to close it?",
                 data: "Notification of duplicate tab displayed",
-                iconURL: icons["32"],
+                iconURL: regIcons["32"],
                 onClick: function (data) {
                     console.log(data);
                     console.log("Noticiation clicked on");
@@ -141,56 +151,51 @@ function checkLink(link) {
 }
 
 // adding an actino button to the tool bar
-require("sdk/ui/button/action").ActionButton({
+var regButton = require("sdk/ui/button/action").ActionButton({
     id: "list-tabs",
     label: "Tidy Tabs",
-    icon: icons,
+    icon: regIcons,
     onClick: buttonClicked
 });
-
-function listTabs() {
-    for (let tab of tabs)
-        console.log(tab.url);
-}
 
 //default sample panel code from panel ref page
 var { ToggleButton } = require('sdk/ui/button/toggle');
 var panels = require("sdk/panel");
-var self = require("sdk/self");
 
 var button = ToggleButton({
-  id: "my-button",
-  label: "my button",
-  icon: {
-    "16": "./icon-16.png",
-    "32": "./icon-32.png",
-    "64": "./icon-64.png"
-  },
-  onChange: handleChange
+    id: "my-button",
+    label: "my button",
+    icon: regIcons,
+    onChange: handleChange
 });
 
 var panel = panels.Panel({
-  width: 180,
-  height: 180,
-  contentURL: self.data.url("notification.html"),
-  onHide: handleHide
+    width: 180,
+    height: 180,
+    contentURL: self.data.url("notification.html"),
+    onHide: handleHide
 });
 
 function handleChange(state) {
-  if (state.checked) {
-    panel.show({
-      position: button
-    });
-  }
+    if (state.checked) {
+        panel.show({
+            position: button
+        });
+    }
 }
 
 function handleHide() {
-  button.state('window', {checked: false});
+    button.state('window', {checked: false});
 }
 
 function buttonClicked(){
-	listTabs();
-	toggleRegister();
+    listTabs();
+    toggleRegister();
+}
+
+function listTabs() {
+    for (let tab of tabs)
+        console.log(tab.url);
 }
 
 // This is for the pop up menu in the browser
