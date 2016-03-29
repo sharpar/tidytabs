@@ -39,10 +39,11 @@ function checkOtherEmpty(newTab) {
     }
 }
 
-function duplicateHandler(tab){
+function duplicateHandler(closeTab, oldTab){
     // This is for a notification on your computer
-    console.log("Closing duplicate" + tab.id)
-    tab.close();
+    console.log("Closing duplicate" + closeTab.id)
+    closeTab.close();
+    oldTab.activate();
 }
 
 /* Check if the address of the new tab is the same as that of an existing tab.
@@ -66,10 +67,11 @@ function checkDuplicate(newTab) {
                     console.log(data);
                     console.log("Noticiation clicked on");
                     // console.log(this.data) would produce the same result.
-                    duplicateHandler(tab);
+                    duplicateHandler(newTab, tab);
                 }
             });
 
+            break;
         }
     }
 }
