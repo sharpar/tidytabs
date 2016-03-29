@@ -9,13 +9,36 @@ var icons = {"16": "./icon-16.png",
             "64": "./icon-64.png"};
 
 
-//Register Event Triggers
-tabs.on("open", checkEmpty);
-tabs.on("activate", checkOtherEmpty);
-tabs.on("activate", checkDuplicate);
-tabs.on("ready", checkDuplicate);
-tabs.on("ready", groupTLD);
+var registered = false;
 
+//Register Event Triggers
+function register(){
+	registered = true;
+	tabs.on("open", checkEmpty);
+	tabs.on("activate", checkOtherEmpty);
+	tabs.on("activate", checkDuplicate);
+	tabs.on("ready", checkDuplicate);
+	tabs.on("ready", groupTLD);
+	console.log("Registered TidyTabs");
+}
+
+function unregister(){
+	registered = false;
+	tabs.removeListener("open", checkEmpty);
+	tabs.removeListener("activate", checkOtherEmpty);
+	tabs.removeListener("activate", checkDuplicate);
+	tabs.removeListener("ready", checkDuplicate);
+	tabs.removeListener("ready", groupTLD);
+	console.log("Unregistered TidyTabs");
+}
+
+function toggleRegister(){
+	if (registered != true){
+		register();
+	} else {
+		unregister();
+	}
+}
 /* Feature 1
  * Closes other blank pages when opening a new tab.
  * If already focused on a blank page, a new tab will not be opened.
@@ -122,7 +145,7 @@ require("sdk/ui/button/action").ActionButton({
     id: "list-tabs",
     label: "Tidy Tabs",
     icon: icons,
-    onClick: listTabs
+    onClick: buttonClicked
 });
 
 function listTabs() {
@@ -165,6 +188,11 @@ function handleHide() {
   button.state('window', {checked: false});
 }
 
+function buttonClicked(){
+	listTabs();
+	toggleRegister();
+}
+
 // This is for the pop up menu in the browser
 /*
 var {Cu, Ci} = require('chrome');
@@ -176,3 +204,4 @@ if (doit) {
 */
 
 
+register();
