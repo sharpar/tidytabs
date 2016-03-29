@@ -61,7 +61,7 @@ function checkDuplicate(newTab) {
                 title: "Tidy Tabs",
                 text: "Duplicate tab opened, Do you want to close it?",
                 data: "Notification of duplicate tab displayed",
-                iconURL: icons["16"],
+                iconURL: icons["32"],
                 onClick: function (data) {
                     console.log(data);
                     console.log("Noticiation clicked on");
