@@ -10,7 +10,7 @@ var regIcons = {"16": "./icon-16.png",
 var unregIcons = {"16": "./icon-16-grey.png",
             "32": "./icon-32-grey.png",
             "64": "./icon-64-grey.png"};
-
+var prefers = require("sdk/simple-prefs").prefs;
 
 
 var registered = false;
@@ -19,15 +19,20 @@ var registered = false;
 function register(){
 	registered = true;
     regButton.icon = regIcons;
-	tabs.on("open", checkEmpty);
-	tabs.on("activate", checkOtherEmpty);
-	tabs.on("activate", checkDuplicate);
-	tabs.on("ready", checkDuplicate);
-	tabs.on("ready", groupTLD);
+    if (prefers.closeNewTabs){
+		tabs.on("open", checkEmpty);
+		tabs.on("activate", checkOtherEmpty);
+		checkOtherEmpty(tabs.activeTab);
+    }
+    if (prefers.closeDuplicates){
+		tabs.on("activate", checkDuplicate);
+		tabs.on("ready", checkDuplicate);
+		checkDuplicate(tabs.activeTab);
+	}
+    if (prefers.groupTabs){
+		tabs.on("ready", groupTLD);
+    }
 	console.log("Registered TidyTabs");
-    checkOtherEmpty(tabs.activeTab);
-    checkDuplicate(tabs.activeTab);
-
 }
 
 function unregister(){
