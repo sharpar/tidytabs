@@ -67,8 +67,37 @@ function checkDuplicate(newTab) {
     }
 }
 
-function groupTLD(){
+function duplicateHandler(tab){
+  tab.close();
+}
 
+/* When a new tab is ready and it has the same TLD as another tab, move it next
+ * to the existing tab.
+ */
+function groupTLD(newTab){
+    var index = -1;
+    for (let tab of tabs) {
+        if ((tab != newTab) && (parseTLD(tab.url) == parseTLD(newTab.url))) {
+            console.log("moved");
+            index = tab.index;
+        }
+    }
+    if(index != -1){
+        if(newTab.index < index){
+            newTab.index = index;
+        }else{
+            newTab.index = index + 1;
+        }
+    }
+}
+
+var urls = require("sdk/url");
+function parseTLD(url){
+    var tld = urls.getTLD(url);
+    var list = url.split(tld);
+    list = list[0].split('.');
+    console.log(list[list.length - 2]);
+    return list[list.length - 2];
 }
 
 /* Check if there exists a tab with the given link.
