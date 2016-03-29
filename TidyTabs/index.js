@@ -3,6 +3,9 @@ var self = require("sdk/self");
 var buttons = require('sdk/ui/button/action');
 var tabs = require("sdk/tabs");
 var notifications = require("sdk/notifications");
+var icon16 = "./icon-16.png";
+var icon32 = "./icon-32.png";
+var icon64 = "./icon-64.png";
 
 
 //Register Event Triggers
@@ -41,7 +44,7 @@ function duplicateHandler(tab){
     tab.close();
 }
 
-    /* Check if the address of the new tab is the same as that of an existing tab.
+/* Check if the address of the new tab is the same as that of an existing tab.
  * If yes, call the duplicate handler.
  */
 function checkDuplicate(newTab) {
@@ -51,6 +54,7 @@ function checkDuplicate(newTab) {
                 title: "Tidy Tabs",
                 text: "Duplicate tab opened, Do you want to close it?",
                 data: "Notification of duplicate tab displayed",
+                iconURL: icon16,
                 onClick: function (data) {
                     console.log(data);
                     console.log("Noticiation clicked on");
@@ -85,9 +89,9 @@ require("sdk/ui/button/action").ActionButton({
     id: "list-tabs",
     label: "Tidy Tabs",
     icon: {
-        "16": "./icon-16.png",
-        "32": "./icon-32.png",
-        "64": "./icon-64.png"
+        "16": icon16,
+        "32": icon32,
+        "64": icon64
     },
     onClick: listTabs
 });
