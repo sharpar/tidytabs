@@ -1,16 +1,37 @@
 {
-  "title": "Tidy Tabs",
-  "name": "tidytabs",
-  "version": "0.0.1",
-  "description": "A basic add-on",
-  "main": "index.js",
-  "author": "Group12",
-  "engines": {
-    "firefox": ">=38.0a1",
-    "fennec": ">=38.0a1"
-  },
-  "license": "MIT",
-  "keywords": [
-    "jetpack"
-  ]
+	"title": "Tidy Tabs",
+	"name": "tidytabs",
+	"version": "0.0.1",
+	"description": "A basic add-on",
+	"main": "index.js",
+	"author": "Group12",
+	"engines": {
+	    "firefox": ">=38.0a1",
+	    "fennec": ">=38.0a1"
+	},
+		"license": "MIT",
+		"keywords": [
+		"jetpack"
+	],
+	"preferences": [{
+	    "name": "closeNewTabs",
+	    "title": "Close extra new tabs",
+	    "description": "Turn this preference on to automatically close New Tabs",
+	    "type": "bool",
+	    "value": false
+	},
+	{
+	    "name": "closeDuplicates",
+	    "title": "Close duplicate tabs",
+	    "description": "Turn this preference on to show notification if current tab is a duplicate and an option to close it",
+	    "type": "bool",
+	    "value": true
+	},
+	{
+	    "name": "groupTabs",
+	    "title": "Group domains",
+	    "description": "Turn this preference on to group tabs by domain name",
+	    "type": "bool",
+	    "value": true
+	}]
 }
