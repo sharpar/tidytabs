@@ -8,6 +8,7 @@ var tabs = require("sdk/tabs");
 tabs.on("open", checkEmpty);
 tabs.on("activate", checkOtherEmpty);
 tabs.on("ready", checkDuplicate);
+tabs.on("ready", groupTLD);
 
 /* Feature 1
  * Closes other blank pages when opening a new tab.
@@ -38,18 +39,19 @@ function checkOtherEmpty(newTab) {
 function checkDuplicate(newTab) {
     for (let tab of tabs) {
         if ((tab != newTab) && (tab.url == newTab.url)) {
-            //duplicateHandler(tab);
-            tab.close()
+            duplicateHandler(tab);
         }
     }
 }
 
-/* The duplicate handler deals with the duplicate tab.
-
 function duplicateHandler(tab){
   tab.close();
 }
- */
+
+function groupTLD(){
+
+}
+
 /* Check if there exists a tab with the given link.
  * If yes, switch to that tab.
  */
