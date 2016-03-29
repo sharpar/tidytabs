@@ -181,6 +181,8 @@ var panel = panels.Panel({
     onHide: handleHide
 });
 
+panel.port.on("toggleRegister", toggleRegister)
+
 function handleChange(state) {
     if (state.checked) {
         panel.show({

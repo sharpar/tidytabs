@@ -1,5 +1,50 @@
+<!DOCTYPE html>
 <html>
-<iframe src="https://mdn-samples.mozilla.org/snippets/html/iframe-simple-contents.html" width="180" height="180">
-  <p>Your browser does not support iframes.</p>
-</iframe>
+	<style type="text/css" media="all">
+		.navButton {
+			text-indent: 1em;
+			text-align: left;
+			cursor: pointer;
+			font-family: "Verdana";
+		  	line-height: 20px;
+			
+			border-style: solid;
+			background-color: white;
+			border-width: 1px;			
+			border-color: white;
+
+    		width: 168px;
+			height: 20px;
+			padding: 0px;
+			overflow: auto;
+			margin: 0px;
+			margin-top: 0px;
+			margin-left: 5px;
+			margin-right: 5px;
+			margin-bottom: 0px;
+			
+		}
+		.navButton:hover {
+			background-color: #f2f2f2;
+			border-color: #cccccc;
+		}
+		hr{
+			border-color: #cccccc;
+			background-color: #cccccc;
+		}
+		body {
+			margin-left: 0px;
+			margin-right: 0px;
+			margin-top: 5px;
+			margin-bottom: 5px;
+		    padding: 0;
+			background: white;
+		}
+	</style>
+	</head>
+	<body>
+		<p class='navButton' id="pause-button">Pause Addon</p>
+		<hr>
+		<script src="notification.js"></script>
+	</body>
 </html>
