@@ -2,11 +2,13 @@
 var self = require("sdk/self");
 var buttons = require('sdk/ui/button/action');
 var tabs = require("sdk/tabs");
+var notifications = require("sdk/notifications");
 
 
 //Register Event Triggers
 tabs.on("open", checkEmpty);
 tabs.on("activate", checkOtherEmpty);
+tabs.on("activate", checkDuplicate);
 tabs.on("ready", checkDuplicate);
 tabs.on("ready", groupTLD);
 
@@ -33,13 +35,30 @@ function checkOtherEmpty(newTab) {
     }
 }
 
-/* Check if the address of the new tab is the same as that of an existing tab.
+function duplicateHandler(tab){
+    // This is for a notification on your computer
+    console.log("Closing duplicate" + tab.id)
+    tab.close();
+}
+
+    /* Check if the address of the new tab is the same as that of an existing tab.
  * If yes, call the duplicate handler.
  */
 function checkDuplicate(newTab) {
     for (let tab of tabs) {
         if ((tab != newTab) && (tab.url == newTab.url)) {
-            duplicateHandler(tab);
+            notifications.notify({
+                title: "Tidy Tabs",
+                text: "Duplicate tab opened, Do you want to close it?",
+                data: "Notification of duplicate tab displayed",
+                onClick: function (data) {
+                    console.log(data);
+                    console.log("Noticiation clicked on");
+                    // console.log(this.data) would produce the same result.
+                    duplicateHandler(tab);
+                }
+            });
+
         }
     }
 }
@@ -117,16 +136,4 @@ if (doit) {
 }
 */
 
-// This is for a notification on your computer
-/*
-var notifications = require("sdk/notifications");
-notifications.notify({
-  title: "Jabberwocky",
-  text: "'Twas brillig, and the slithy toves",
-  data: "did gyre and gimble in the wabe",
-  onClick: function (data) {
-    console.log(data);
-    // console.log(this.data) would produce the same result.
-  }
-});
-*/
+
