@@ -71,7 +71,7 @@ function checkOtherEmpty(newTab) {
         for (let tab of tabs) {
             if ((tab != newTab) && ((tab.url == "about:blank") || (tab.url == "about:newtab"))) {
                 tab.close();
-                break;
+                
             }
         }
     }
@@ -199,4 +199,4 @@ function listTabs() {
 }
 
 
-register();
+register(); 
