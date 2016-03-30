@@ -12,8 +12,9 @@ var unregIcons = {"16": "./icon-16-grey.png",
             "64": "./icon-64-grey.png"};
 var prefers = require("sdk/simple-prefs").prefs;
 
-
 var registered = false;
+
+var debug = false;
 
 //Register Event Triggers
 function register(){
@@ -32,7 +33,7 @@ function register(){
     if (prefers.groupTabs){
 		tabs.on("ready", groupTLD);
     }
-	console.log("Registered TidyTabs");
+    if(debug) console.log("Registered TidyTabs");
 }
 
 function unregister(){
@@ -43,7 +44,7 @@ function unregister(){
 	tabs.removeListener("activate", checkDuplicate);
 	tabs.removeListener("ready", checkDuplicate);
 	tabs.removeListener("ready", groupTLD);
-	console.log("Unregistered TidyTabs");
+	if(debug) console.log("Unregistered TidyTabs");
 }
 
 function toggleRegister(){
@@ -71,7 +72,6 @@ function checkOtherEmpty(newTab) {
         for (let tab of tabs) {
             if ((tab != newTab) && ((tab.url == "about:blank") || (tab.url == "about:newtab"))) {
                 tab.close();
-                
             }
         }
     }
@@ -79,7 +79,7 @@ function checkOtherEmpty(newTab) {
 
 function duplicateHandler(closeTab, oldTab){
     // This is for a notification on your computer
-    console.log("Closing duplicate" + closeTab.id)
+    if(debug) console.log("Closing duplicate" + closeTab.id)
     closeTab.close();
     oldTab.activate();
 }
@@ -102,8 +102,8 @@ function checkDuplicate(newTab) {
                 data: "Notification of duplicate tab displayed",
                 iconURL: regIcons["32"],
                 onClick: function (data) {
-                    console.log(data);
-                    console.log("Noticiation clicked on");
+                    if(debug) console.log(data);
+                    if(debug) console.log("Noticiation clicked on");
                     // console.log(this.data) would produce the same result.
                     duplicateHandler(newTab, tab);
                 }
@@ -121,7 +121,7 @@ function groupTLD(newTab){
     var index = -1;
     for (let tab of tabs) {
         if ((tab != newTab) && (parseTLD(tab.url) == parseTLD(newTab.url))) {
-            console.log("moved");
+            if(debug) console.log("moved");
             index = tab.index;
         }
     }
@@ -138,7 +138,7 @@ function parseTLD(url){
     var tld = urls.getTLD(url);
     var list = url.split(tld);
     list = list[0].split('.');
-    console.log(list[list.length - 2]);
+    if(debug) console.log(list[list.length - 2]);
     return list[list.length - 2];
 }
 
