@@ -95,7 +95,7 @@ function checkDuplicate(newTab) {
     }
 
     for (let tab of tabs) {
-        if ((tab != newTab) && (tab.url == newTab.url)) {
+        if ((tab != newTab) && (newTab.url != "about:blank") && (newTab.url != "about:newtab") && (tab.url == newTab.url)) {
             notifications.notify({
                 title: "Tidy Tabs",
                 text: "Duplicate tab opened, Do you want to close it?",
@@ -204,16 +204,6 @@ function listTabs() {
     for (let tab of tabs)
         console.log(tab.url);
 }
-
-// This is for the pop up menu in the browser
-/*
-var {Cu, Ci} = require('chrome');
-Cu.import('resource://gre/modules/Services.jsm');
-var doit = Services.prompt.confirm(null, 'title', 'message');
-if (doit) {
-//he clicked yes
-}
-*/
 
 
 register();
