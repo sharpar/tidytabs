@@ -18,7 +18,7 @@ var registered = false;
 //Register Event Triggers
 function register(){
 	registered = true;
-    regButton.icon = regIcons;
+    button.icon = regIcons;
     if (prefers.closeNewTabs){
 		tabs.on("open", checkEmpty);
 		tabs.on("activate", checkOtherEmpty);
@@ -37,7 +37,7 @@ function register(){
 
 function unregister(){
 	registered = false;
-    regButton.icon = unregIcons;
+    button.icon = unregIcons;
 	tabs.removeListener("open", checkEmpty);
 	tabs.removeListener("activate", checkOtherEmpty);
 	tabs.removeListener("activate", checkDuplicate);
@@ -155,13 +155,6 @@ function checkLink(link) {
     return false;
 }
 
-// adding an actino button to the tool bar
-var regButton = require("sdk/ui/button/action").ActionButton({
-    id: "list-tabs",
-    label: "Tidy Tabs",
-    icon: regIcons,
-    onClick: buttonClicked
-});
 
 //default sample panel code from panel ref page
 var { ToggleButton } = require('sdk/ui/button/toggle');
