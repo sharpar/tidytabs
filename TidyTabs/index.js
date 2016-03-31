@@ -96,7 +96,18 @@ function checkDuplicate(newTab) {
 
     for (let tab of tabs) {
         if ((tab != newTab) && (newTab.url != "about:blank") && (newTab.url != "about:newtab") && (tab.url == newTab.url)) {
-            notifications.notify({
+            notifyDup(newTab, tab);
+            break;
+        }
+    }
+}
+
+
+//Display's system notification of duplicate tab
+//If user clicks on notification then tab closes and switches to the old tab
+//Notification will dismiss after some time determined by system
+function notifyDup(newTab, tab) {
+    notifications.notify({
                 title: "Tidy Tabs",
                 text: "Duplicate tab opened, Do you want to close it?",
                 data: "Notification of duplicate tab displayed",
@@ -108,11 +119,8 @@ function checkDuplicate(newTab) {
                     duplicateHandler(newTab, tab);
                 }
             });
-
-            break;
-        }
-    }
 }
+
 
 /* When a new tab is ready and it has the same TLD as another tab, move it next
  * to the existing tab.
