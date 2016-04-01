@@ -4,6 +4,9 @@ A basic add-on
 #Group Meeting Minutes
 https://docs.google.com/document/d/1qdqR5fDPVQLizGw1BXOhPbPG7bAdXN6S30kn1PExbQk/edit#
 
+#Phase 2 Google Doc 
+https://docs.google.com/document/d/1L2aVVjz69lcPpj2zW7hV9kiKqLLgKaKlccp347lQHTc/edit
+
 #Useful References
 * https://developer.mozilla.org/en-US/Add-ons/SDK/Tutorials/Getting_Started_%28jpm%29
 * https://developer.mozilla.org/en-US/Add-ons/SDK/High-Level_APIs/tabs
