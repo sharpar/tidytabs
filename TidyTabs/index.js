@@ -127,7 +127,9 @@ function checkDuplicate(newTab) {
 
     for (let tab of tabs) {
         if ((tab != newTab) && (newTab.url != "about:blank") && (newTab.url != "about:newtab") && (tab.url == newTab.url)) {
-            notifyDup(newTab, tab);
+            if(whitelist.indexOf(parseTLD(newTab.url)) < 0 ){
+                notifyDup(newTab, tab);
+            }
             break;
         }
     }
@@ -157,18 +159,20 @@ function notifyDup(newTab, tab) {
  * to the existing tab.
  */
 function groupTLD(newTab) {
-    var index = -1;
-    for (let tab of tabs) {
-        if ((tab != newTab) && (parseTLD(tab.url) == parseTLD(newTab.url))) {
-            if (debug) console.log("moved");
-            index = tab.index;
+    if(newTab.url != "about:blank" && newTab.url != "about:newtab"){
+        var index = -1;
+        for (let tab of tabs) {
+            if ((tab != newTab) && (parseTLD(tab.url) == parseTLD(newTab.url))) {
+                if (debug) console.log("moved");
+                index = tab.index;
+            }
         }
-    }
-    if (index != -1) {
-        if (newTab.index < index) {
-            newTab.index = index;
-        } else {
-            newTab.index = index + 1;
+        if (index != -1) {
+            if (newTab.index < index) {
+                newTab.index = index;
+            } else {
+                newTab.index = index + 1;
+            }
         }
     }
 }
