@@ -40,3 +40,6 @@ Whenever the user opens a link in a new tab or a current tab, the add-on lets th
 # Reflection on Team’s Process
 
 Our team stayed on track with regular in person meetings that served as productive work sessions. During these sessions we discussed any bugs and problems in a collaborative effort to solve them. We also used these meetings to run through use cases of the application and discussed areas that needed improvement. This process worked well as we overcame our more challenging problems through such collaboration. Some challenges we found in our team’s process included finding meeting times that fit the schedules of all team members.
+
+# Artifacts:
+Meeting minutes: [Document](https://docs.google.com/document/d/1qdqR5fDPVQLizGw1BXOhPbPG7bAdXN6S30kn1PExbQk/)
