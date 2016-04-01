@@ -11,10 +11,15 @@ var unregIcons = {"16": "./icon-16-grey.png",
             "32": "./icon-32-grey.png",
             "64": "./icon-64-grey.png"};
 var prefers = require("sdk/simple-prefs").prefs;
+var whitelist = require("sdk/simple-storage").storage.TTwhitelist;
+
+if (!whitelist){
+	whitelist = [];
+}
 
 var registered = false;
 
-var debug = false;
+var debug = true;
 
 //Register Event Triggers
 function register(){
@@ -48,12 +53,35 @@ function unregister(){
 }
 
 function toggleRegister(){
+	if(debug) console.log("Toggling register");
 	if (registered){
 		unregister();
 	} else {
 		register();
 	}
 }
+
+// Simple Storage Whitelisting
+function whitelistURL(){
+	urlTLD = parseTLD(tabs.activeTab.url);
+	if (whitelist.indexOf(urlTLD) > -1){
+		console.log("Error: URL is already whitelisted");
+	} else {
+		whitelist.push(urlTLD);
+	}
+	if (debug) console.log("Current whitelist: " + whitelist.toString());
+}
+
+function unWhitelistURL(tab){
+	urlIndex = whitelist.indexOf(parseTLD(tabs.activeTab.url));
+	if (urlIndex > -1){
+		whitelist.splice(urlIndex,1);
+	} else {
+		console.log("Error: URL is already whitelisted");
+	}
+	if (debug) console.log("Current whitelist: " + whitelist.toString());
+}
+
 /* Feature 1
  * Closes other blank pages when opening a new tab.
  * If already focused on a blank page, a new tab will not be opened.
@@ -182,7 +210,23 @@ var panel = panels.Panel({
     onHide: handleHide
 });
 
+// All event handlers for addon panel go here
 panel.port.on("toggleRegister", toggleRegister)
+panel.port.on("logConsole", logConsole)
+panel.port.on("addWhitelist", whitelistURL)
+panel.port.on("removeWhitelist", unWhitelistURL)
+
+// Prepare panel for display
+panel.on("show", function() {
+	console.log("Checking tabs");
+	indexTLD = (whitelist.indexOf(parseTLD(tabs.activeTab.url)));
+	console.log(indexTLD);
+	panel.port.emit("show", indexTLD);
+});
+
+function logConsole(text){
+	console.log(text);
+}
 
 function handleChange(state) {
     if (state.checked) {
@@ -206,5 +250,4 @@ function listTabs() {
         console.log(tab.url);
 }
 
-
-register(); 
+register();
