@@ -1,5 +1,8 @@
+// Pause/Unpause Button
 var pauseButton = document.getElementById("pause-button");
 var whitelistButton = document.getElementById("toggle-whitelist");
+// Open Addon Options
+var optionsButton = document.getElementById("options-button");
 var pause = false;
 var whitelist = -1;
 
@@ -15,7 +18,7 @@ pauseButton.addEventListener('click', function onClick(event){
 })
 
 whitelistButton.addEventListener('click', function onClick(event){
-	addon.port.emit("logConsole", whitelist);
+	//addon.port.emit("logConsole", whitelist);
 	if (whitelist == -1){
 		whitelistButton.innerHTML = "Remove domain from Whitelist";
 		whitelist = 0;
@@ -27,6 +30,10 @@ whitelistButton.addEventListener('click', function onClick(event){
 	}
 	
 })
+
+optionsButton.addEventListener('click', function onClick(event) {
+    addon.port.emit("openOptions");
+});
 
 addon.port.on("show", function onShow(whitelistIndex){
 	if (whitelistIndex > -1){
