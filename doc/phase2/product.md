@@ -43,3 +43,4 @@ Our team stayed on track with regular in person meetings that served as producti
 
 # Artifacts:
 Meeting minutes: [Document](https://docs.google.com/document/d/1qdqR5fDPVQLizGw1BXOhPbPG7bAdXN6S30kn1PExbQk/)
+![Sample of how it will look/work (March 7, 2016)](https://github.com/csc302-2016-spring/Group12/blob/master/doc/phase2/designartifact030716.jpg "Design artifact, March 7, 2016")
