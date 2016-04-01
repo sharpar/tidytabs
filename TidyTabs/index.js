@@ -241,9 +241,9 @@ panel.port.on("openOptions", openOptions)
 
 // Prepare panel for display
 panel.on("show", function() {
-	console.log("Checking tabs");
+	if (debug) console.log("Checking tabs");
 	indexTLD = (whitelist.indexOf(parseTLD(tabs.activeTab.url)));
-	console.log(indexTLD);
+	if (debug) console.log(indexTLD);
 	panel.port.emit("show", indexTLD);
 });
 
