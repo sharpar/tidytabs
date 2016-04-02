@@ -276,7 +276,7 @@ function listTabs() {
 }
 
 function onPrefChange(prefName) {
-    console.log("The preference " + prefName + "Value has changed!");
+    console.log("The preference " + prefName + " Value has changed!");
     toggleRegister();
     toggleRegister();
 }    
