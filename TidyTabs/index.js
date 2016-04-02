@@ -220,7 +220,7 @@ var panels = require("sdk/panel");
 
 var button = ToggleButton({
     id: "my-button",
-    label: "my button",
+    label: "TidyTabs",
     icon: regIcons,
     onChange: handleChange
 });
