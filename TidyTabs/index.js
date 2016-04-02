@@ -68,6 +68,7 @@ function toggleRegister(){
 
 //Preferences 
 function onPrefChange(prefName) {
+	if (debug)console.log(prefName + " value has changed");
 	if (registered == true){
 		if ((prefers.prefs[prefName]) === true){
 			if (prefName == "closeNewTabs"){
@@ -120,6 +121,10 @@ function unWhitelistURL(tab){
 	if (debug) console.log("Current whitelist: " + whitelist.toString());
 }
 
+function clearWhitelist(){
+	if (debug) console.log("Clearing whitelist");
+	whitelist = [];
+}
 /* Feature 1
  * Closes other blank pages when opening a new tab.
  * If already focused on a blank page, a new tab will not be opened.
@@ -311,5 +316,5 @@ panel.on("show", function() {
 });
 
 prefers.on("", onPrefChange);
-
+prefers.on("clearWhitelist", clearWhitelist);
 register();

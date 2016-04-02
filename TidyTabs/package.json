@@ -33,5 +33,12 @@
 	    "description": "Turn this preference on to group tabs by domain name",
 	    "type": "bool",
 	    "value": true
+	},
+	{
+	    "type": "control",
+	    "label": "Clear Whitelist",
+	    "name": "clearWhitelist",
+	    "title": "Clear Whitelist",
+	    "description": "Clear all entries in the whitelist"
 	}]
 }
