@@ -14,7 +14,7 @@ var unregIcons = {
     "32": "./icon-32-grey.png",
     "64": "./icon-64-grey.png"
 };
-var prefers = require("sdk/simple-prefs").prefs;
+var prefers = require("sdk/simple-prefs");
 var whitelist = require("sdk/simple-storage").storage.TTwhitelist;
 
 if (!whitelist){
@@ -25,21 +25,22 @@ var registered = false;
 
 var debug = false;
 
+
 //Register Event Triggers
 function register() {
     registered = true;
     button.icon = regIcons;
-    if (prefers.closeNewTabs) {
+    if (prefers.prefs.closeNewTabs) {
         tabs.on("open", checkEmpty);
         tabs.on("activate", checkOtherEmpty);
         checkOtherEmpty(tabs.activeTab);
     }
-    if (prefers.closeDuplicates) {
+    if (prefers.prefs.closeDuplicates) {
         tabs.on("activate", checkDuplicate);
         tabs.on("ready", checkDuplicate);
         checkDuplicate(tabs.activeTab);
     }
-    if (prefers.groupTabs) {
+    if (prefers.prefs.groupTabs) {
         tabs.on("ready", groupTLD);
     }
     if (debug) console.log("Registered TidyTabs");
@@ -62,6 +63,39 @@ function toggleRegister(){
 		unregister();
 	} else {
 		register();
+	}
+}
+
+//Preferences 
+function onPrefChange(prefName) {
+	if (registered == true){
+		if ((prefers.prefs[prefName]) === true){
+			if (prefName == "closeNewTabs"){
+		        tabs.on("open", checkEmpty);
+		        tabs.on("activate", checkOtherEmpty);
+		        checkOtherEmpty(tabs.activeTab);
+			}
+			if (prefName == "closeDuplicates"){
+				tabs.on("activate", checkDuplicate);
+		        tabs.on("ready", checkDuplicate);
+		        checkDuplicate(tabs.activeTab);
+			}
+			if (prefName == "groupTabs"){
+		        tabs.on("ready", groupTLD);
+			}
+		} else {
+			if (prefName == "closeNewTabs"){
+				tabs.removeListener("open", checkEmpty);
+			    tabs.removeListener("activate", checkOtherEmpty);
+			}
+			if (prefName == "closeDuplicates"){
+				tabs.removeListener("activate", checkDuplicate);
+			    tabs.removeListener("ready", checkDuplicate);
+			}
+			if (prefName == "groupTabs"){
+				tabs.removeListener("ready", groupTLD);
+			}
+		}
 	}
 }
 
@@ -232,20 +266,6 @@ var panel = panels.Panel({
     onHide: handleHide
 });
 
-// All event handlers for addon panel go here
-panel.port.on("toggleRegister", toggleRegister)
-panel.port.on("logConsole", logConsole)
-panel.port.on("addWhitelist", whitelistURL)
-panel.port.on("removeWhitelist", unWhitelistURL)
-panel.port.on("openOptions", openOptions)
-
-// Prepare panel for display
-panel.on("show", function() {
-	if (debug) console.log("Checking tabs");
-	indexTLD = (whitelist.indexOf(parseTLD(tabs.activeTab.url)));
-	if (debug) console.log(indexTLD);
-	panel.port.emit("show", indexTLD);
-});
 
 function logConsole(text){
 	console.log(text);
@@ -275,11 +295,21 @@ function listTabs() {
         console.log(tab.url);
 }
 
-function onPrefChange(prefName) {
-    console.log("The preference " + prefName + " Value has changed!");
-    toggleRegister();
-    toggleRegister();
-}    
-require("sdk/simple-prefs").on("", onPrefChange);
+//All event handlers for addon panel go here
+panel.port.on("toggleRegister", toggleRegister)
+panel.port.on("logConsole", logConsole)
+panel.port.on("addWhitelist", whitelistURL)
+panel.port.on("removeWhitelist", unWhitelistURL)
+panel.port.on("openOptions", openOptions)
+
+// Prepare panel for display
+panel.on("show", function() {
+	if (debug) console.log("Checking tabs");
+	indexTLD = (whitelist.indexOf(parseTLD(tabs.activeTab.url)));
+	if (debug) console.log(indexTLD);
+	panel.port.emit("show", indexTLD);
+});
+
+prefers.on("", onPrefChange);
 
 register();
