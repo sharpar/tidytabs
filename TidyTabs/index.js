@@ -275,4 +275,11 @@ function listTabs() {
         console.log(tab.url);
 }
 
+function onPrefChange(prefName) {
+    console.log("The preference " + prefName + "Value has changed!");
+    toggleRegister();
+    toggleRegister();
+}    
+require("sdk/simple-prefs").on("", onPrefChange);
+
 register();
