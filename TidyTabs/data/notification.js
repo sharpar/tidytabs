@@ -20,7 +20,7 @@ pauseButton.addEventListener('click', function onClick(event){
 whitelistButton.addEventListener('click', function onClick(event){
 	//addon.port.emit("logConsole", whitelist);
 	if (whitelist == -1){
-		whitelistButton.innerHTML = "Remove domain from Whitelist";
+		whitelistButton.innerHTML = "Remove domain Whitelist";
 		whitelist = 0;
 		addon.port.emit("addWhitelist");
 	} else {

@@ -266,7 +266,7 @@ var button = ToggleButton({
 
 var panel = panels.Panel({
     width: 180,
-    height: 180,
+    height: 100,
     contentURL: self.data.url("notification.html"),
     onHide: handleHide
 });
