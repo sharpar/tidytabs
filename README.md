@@ -6,6 +6,16 @@ Firefox addon that improves work flow by organzing tabs and keeping it clean.
 * Grouping the tabs that have the same domain
 * User can whitelist domains that they do not want to be handled by the add-on
 
+##### Dropdown options menu
+![Screenshot 1] (/images/one.png)
+
+##### Addon sample notification
+![Screenshot 2] (/images/two.png)
+
+##### Addon settings/preferences menu
+![Screenshot 3] (/images/three.png)
+
+
 #Group Meeting Minutes
 https://docs.google.com/document/d/1qdqR5fDPVQLizGw1BXOhPbPG7bAdXN6S30kn1PExbQk/
 
