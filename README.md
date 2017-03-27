@@ -7,13 +7,13 @@ Firefox addon that improves work flow by organzing tabs and keeping it clean.
 * User can whitelist domains that they do not want to be handled by the add-on
 
 ##### Dropdown options menu
-![Screenshot 1] (/images/one.png)
+![Screenshot 1](/images/one.png)
 
 ##### Addon sample notification
-![Screenshot 2] (/images/two.png)
+![Screenshot 2](/images/two.png)
 
 ##### Addon settings/preferences menu
-![Screenshot 3] (/images/three.png)
+![Screenshot 3](/images/three.png)
 
 
 #Group Meeting Minutes
