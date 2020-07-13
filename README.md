@@ -1,4 +1,5 @@
-#Tidy Tabs
+# Tidy Tabs
+
 Firefox addon that improves work flow by organzing tabs and keeping it clean. 
 
 * Notifies user of duplicate tabs with system notification
@@ -16,13 +17,13 @@ Firefox addon that improves work flow by organzing tabs and keeping it clean.
 ![Screenshot 3](/images/three.png)
 
 
-#Group Meeting Minutes
+## Group Meeting Minutes
+
 https://docs.google.com/document/d/1qdqR5fDPVQLizGw1BXOhPbPG7bAdXN6S30kn1PExbQk/
 
-#Phase 2 Google Doc 
-https://docs.google.com/document/d/1L2aVVjz69lcPpj2zW7hV9kiKqLLgKaKlccp347lQHTc/
+Phase 2 Google Doc: https://docs.google.com/document/d/1L2aVVjz69lcPpj2zW7hV9kiKqLLgKaKlccp347lQHTc/
 
-#Useful References
+## Useful References
 * https://developer.mozilla.org/en-US/Add-ons/SDK/Tutorials/Getting_Started_%28jpm%29
 * https://developer.mozilla.org/en-US/Add-ons/SDK/High-Level_APIs/tabs
 * https://developer.mozilla.org/en/docs/Adding_preferences_to_an_extension
